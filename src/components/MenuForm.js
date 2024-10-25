@@ -1,4 +1,3 @@
-// src/components/MenuForm.js
 import { useContext, useState } from 'react';
 import { MenuContext } from '../context/MenuContext';
 
@@ -8,9 +7,9 @@ const MenuForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newItem = { id: Date.now(), name, children: [] }; // Add a basic item structure
+    const newItem = { id: Date.now(), name, children: [] }; 
     addMenuItem(newItem);
-    setName(''); // Clear the input
+    setName(''); 
   };
 
   return (

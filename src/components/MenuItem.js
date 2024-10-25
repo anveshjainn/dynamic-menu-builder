@@ -1,4 +1,3 @@
-// src/components/MenuItem.js
 import { useContext, useState } from 'react';
 import { MenuContext } from '../context/MenuContext';
 
@@ -8,9 +7,8 @@ const MenuItem = ({ item }) => {
   const [newName, setNewName] = useState(item.name);
   const [isAddingSubmenu, setIsAddingSubmenu] = useState(false);
   const [submenuName, setSubmenuName] = useState('');
-  const [isCollapsed, setIsCollapsed] = useState(false);  // Collapsible state
+  const [isCollapsed, setIsCollapsed] = useState(false); 
 
-  // Handle saving the edited item
   const handleSave = () => {
     if (newName.trim()) {
       editMenuItem(item.id, { ...item, name: newName });
@@ -18,17 +16,15 @@ const MenuItem = ({ item }) => {
     }
   };
 
-  // Handle deleting the item
   const handleDelete = () => {
     deleteMenuItem(item.id);
   };
 
-  // Handle adding a submenu
   const handleAddSubmenu = () => {
     if (submenuName.trim()) {
       const newSubmenu = { id: Date.now(), name: submenuName, children: [] };
       addMenuItem(newSubmenu, item.id);
-      setSubmenuName(''); // Clear the input
+      setSubmenuName(''); 
       setIsAddingSubmenu(false);
     }
   };
@@ -55,7 +51,7 @@ const MenuItem = ({ item }) => {
         {isAddingSubmenu ? "Cancel Submenu" : "Add Submenu"}
       </button>
       
-      {/* Collapsible toggle */}
+      {}
       {item.children.length > 0 && (
         <button onClick={() => setIsCollapsed(!isCollapsed)}>
           {isCollapsed ? "Expand" : "Collapse"}
@@ -74,7 +70,7 @@ const MenuItem = ({ item }) => {
         </>
       )}
 
-      {/* Recursively render child items if not collapsed */}
+      {}
       {!isCollapsed && item.children.length > 0 && (
         <ul>
           {item.children.map((child) => (

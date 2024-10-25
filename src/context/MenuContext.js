@@ -1,4 +1,3 @@
-// src/context/MenuContext.js
 import { createContext, useState, useEffect } from 'react';
 
 export const MenuContext = createContext();
@@ -30,9 +29,9 @@ export const MenuProvider = ({ children }) => {
 
   const addMenuItem = (newItem, parentId = null) => {
     if (parentId === null) {
-      setMenuItems([...menuItems, newItem]); // Add as a top-level item
+      setMenuItems([...menuItems, newItem]); 
     } else {
-      setMenuItems(addSubmenu(parentId, newItem, menuItems)); // Add as a submenu
+      setMenuItems(addSubmenu(parentId, newItem, menuItems)); 
     }
   };
 
