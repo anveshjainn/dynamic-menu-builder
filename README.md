@@ -1,3 +1,23 @@
+The Dynamic Menu Builder is a React-based web application that allows users to create and manage multi-level navigation menus with full CRUD (Create, Read, Update, Delete) functionality.
+
+React Hooks: The application leverages React hooks like useState and useEffect to manage menu state and persist data to localStorage. This ensures that the menu structure remains intact even after refreshing the browser.
+
+Context API: A MenuContext is created using the Context API to maintain a global menu state. This helps in sharing the menu data and related functions across different components without passing props, thereby improving code modularity and reducing prop drilling.
+
+The app’s core functionality is centered on managing a nested menu structure. Here’s a breakdown:
+Adding a Menu Item: Users can add a main menu item or a submenu under an existing item.
+Editing and Deleting Items: Each item in the menu has options to edit or delete. When editing, the user can change the item’s name, and it’s immediately updated in the menu structure.
+
+
+Project Structure
+src/context/MenuContext.js: Houses the MenuContext and provides functions like addMenuItem, editMenuItem, deleteMenuItem, and toggleTheme.
+src/components/MenuBuilder.js: The primary UI component for building and displaying the menu. This component uses recursion to render nested menus.
+src/App.js: The root component that includes the theme toggle button and initializes the MenuProvider.
+src/App.css: Contains basic styles for the layout, responsive design, and theme.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
